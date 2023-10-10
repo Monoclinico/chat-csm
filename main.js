@@ -16,4 +16,21 @@ Typebot.initStandard({ typebot: "avon-chat-csm-1" });`;
     Typebot.initStandard({ typebot: "avon-chat-csm-2" });`;
 }
 
+
+function removerlogo() {
+
+    let blocoS = document.getElementsByTagName("typebot-standard")[0];
+
+	let blocoS1 = blocoS.shadowRoot.getElementById("lite-badge");
+	
+    if (blocoS1 == null){
+        const myTimeout2= setTimeout(removerlogo, 500);
+    }else{
+        blocoS1.style = "display: none !important;";
+    }
+    
+}
+
+
 document.body.append(typebotInitScript);
+const myTimeout = setTimeout(removerlogo, 500);
