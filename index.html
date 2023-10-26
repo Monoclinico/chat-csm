@@ -6,15 +6,101 @@
     <title>CHAT AVON CSM</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <style>
         body {
             margin: 0;
             padding: 0;
+
         }
+
+        .bloco_login {
+        	display: block;
+            position: absolute;
+            min-width: 180px;
+            margin: 0 auto;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0);
+            top: 50%;
+            left: 50%;
+            padding: 10px;
+            transform: translate;
+            transform: translate(-50%, -50%);
+            border: 4px solid #ffffff00;
+            border-radius: 20px;
+        }
+
+        #fundo {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url(./imagens/background_avon4.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 1;
+
+        }
+        
+        #filtro {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.377);
+            opacity: 1;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 2px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            color: black;
+            font-weight: 500;
+        }
+        input::placeholder {
+            color: black;
+            opacity: 1;
+        }
+
+        #btn_logar {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            font-size: 20px;
+
+        }
+
+        #acesso {
+            color: red;
+            display: none;
+            font-size: 20px;
+            font-weight: 900;
+            background-color: transparent;
+            margin: 0 auto;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
-<typebot-standard style="height: 100vh; "></typebot-standard>
+    <div id="fundo">
+        <div id="filtro">
+        </div>
+    </div>
+    <div id="id_bloco_login" class="bloco_login">
+        <input id="usuario" type="text" placeholder="Usuário" required>
+        <input id="senha" type="password" placeholder="Senha"  required>
+        <button id="btn_logar" type="submit">Entrar</button>
+        <p id="acesso">Acesso Negado</p>
+    </div>
+    <typebot-standard style="height: 100vh; "></typebot-standard>
 </body>
     <script src="main.js">
     </script>
