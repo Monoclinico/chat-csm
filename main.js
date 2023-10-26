@@ -1,21 +1,30 @@
-const d = new Date();
-let seconds = d.getSeconds().valueOf();
-const typebotInitScript = document.createElement("script");
-typebotInitScript.type = "module";
+
+const USUARIO = "avon";
+const SENHA = "avon@@2023";
 
 
-if (seconds  % 2 == 0) {
-    //par
-    typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
-  
-Typebot.initStandard({ typebot: "avon-chat-csm-1" });`;
-}else{
-    //impar
-    typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
-  
-    Typebot.initStandard({ typebot: "avon-chat-csm-2" });`;
+function inserirChat(){
+
+    const d = new Date();
+    let seconds = d.getSeconds().valueOf();
+    const typebotInitScript = document.createElement("script");
+    typebotInitScript.type = "module";
+
+
+    if (seconds  % 2 == 0) {
+        //par
+        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
+    
+    Typebot.initStandard({ typebot: "avon-chat-csm-1" });`;
+    }else{
+        //impar
+        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
+    
+        Typebot.initStandard({ typebot: "avon-chat-csm-2" });`;
+    }
+
+    document.body.append(typebotInitScript);
 }
-
 
 function removerlogo() {
 
@@ -32,5 +41,27 @@ function removerlogo() {
 }
 
 
-document.body.append(typebotInitScript);
-const myTimeout = setTimeout(removerlogo, 500);
+
+function login() {
+
+    let bloco_login = document.getElementById("id_bloco_login");
+
+    let input_usuario = document.getElementById("usuario");
+    let input_senha = document.getElementById("senha");
+
+    if ((SENHA == input_senha.value.toString()) && (USUARIO == input_usuario.value.toString())){
+        bloco_login.style = "display: none;"
+        inserirChat();
+        const myTimeout = setTimeout(removerlogo, 500);
+    }else {
+       let acesso = document.getElementById("acesso");
+       acesso.style = "display: block;";
+
+    }
+    
+
+}
+
+
+let botao_logar = document.getElementById("btn_logar");
+botao_logar.addEventListener("click",login);
