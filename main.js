@@ -41,25 +41,24 @@ function removerlogo() {
 }
 
 
-
 function login() {
 
     let bloco_login = document.getElementById("id_bloco_login");
-
+    let bloco_fundo = document.getElementById("fundo");
     let input_usuario = document.getElementById("usuario");
     let input_senha = document.getElementById("senha");
 
     if ((SENHA == input_senha.value.toString()) && (USUARIO == input_usuario.value.toString())){
-        bloco_login.style = "display: none;"
+        bloco_login.style = "display: none;";
+        bloco_fundo.style = "display: none;";
         inserirChat();
         const myTimeout = setTimeout(removerlogo, 500);
+
     }else {
        let acesso = document.getElementById("acesso");
-       acesso.style = "display: block;";
-
+       acesso.style = " visibility: visible;";
     }
     
-
 }
 
 
