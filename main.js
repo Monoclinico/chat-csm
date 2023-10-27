@@ -56,9 +56,10 @@ function login() {
 
     }else {
        let acesso = document.getElementById("acesso");
-       acesso.style = " visibility: visible;";
+       acesso.style = " display: block;";
     }
     
+
 }
 
 
