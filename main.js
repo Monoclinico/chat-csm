@@ -3,7 +3,7 @@ const USUARIO = "avon";
 const SENHA = "avon@@2023";
 
 
-function inserirChat(){
+function inserirChat(senha){
 
     const d = new Date();
     let seconds = d.getSeconds().valueOf();
@@ -15,12 +15,24 @@ function inserirChat(){
         //par
         typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
     
-    Typebot.initStandard({ typebot: "avon-chat-csm-1" });`;
+        Typebot.initStandard({ 
+            typebot: "avon-chat-csm-1", 
+            prefilledVariables: {
+                SENHA: '${senha}'
+            },
+        });
+        `;
     }else{
         //impar
         typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
     
-        Typebot.initStandard({ typebot: "avon-chat-csm-2" });`;
+        Typebot.initStandard({ 
+            typebot: "avon-chat-csm-2", 
+            prefilledVariables: {
+                SENHA: '${senha}'
+            },
+        });
+        `;
     }
 
     document.body.append(typebotInitScript);
@@ -51,7 +63,7 @@ function login() {
     if ((SENHA == input_senha.value.toString()) && (USUARIO == input_usuario.value.toString())){
         bloco_login.style = "display: none;";
         bloco_fundo.style = "display: none;";
-        inserirChat();
+        inserirChat(SENHA);
         const myTimeout = setTimeout(removerlogo, 500);
 
     }else {
