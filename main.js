@@ -13,10 +13,10 @@ function inserirChat(senha){
 
     if (seconds  % 2 == 0) {
         //par
-        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
+        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
     
         Typebot.initStandard({ 
-            typebot: "avon-chat-csm-1", 
+            typebot: "avon-chat-csm-1000", 
             prefilledVariables: {
                 SENHA: '${senha}'
             },
@@ -24,10 +24,10 @@ function inserirChat(senha){
         `;
     }else{
         //impar
-        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.1/dist/web.js'
+        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
     
         Typebot.initStandard({ 
-            typebot: "avon-chat-csm-2", 
+            typebot: "avon-chat-csm-2000", 
             prefilledVariables: {
                 SENHA: '${senha}'
             },
