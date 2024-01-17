@@ -1,6 +1,6 @@
 
 const USUARIO = "avon";
-const SENHA = "avon@@2023";
+const SENHA = "avon@2024";
 
 
 function inserirChat(senha){
