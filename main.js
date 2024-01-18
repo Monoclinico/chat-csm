@@ -16,7 +16,7 @@ function inserirChat(senha){
         typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
     
         Typebot.initStandard({ 
-            typebot: "avon-chat-csm-1000", 
+            typebot: "aavon-chat-csm-aaa", 
             prefilledVariables: {
                 SENHA: '${senha}'
             },
@@ -27,7 +27,7 @@ function inserirChat(senha){
         typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.2/dist/web.js'
     
         Typebot.initStandard({ 
-            typebot: "avon-chat-csm-2000", 
+            typebot: "avon-chat-csm-bbb", 
             prefilledVariables: {
                 SENHA: '${senha}'
             },
