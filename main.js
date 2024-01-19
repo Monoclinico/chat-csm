@@ -1,7 +1,7 @@
 
 const USUARIO = "avon";
 const SENHA = "avon@2024";
-
+const ATIVADO = false;
 
 function inserirChat(senha){
 
@@ -74,6 +74,9 @@ function login() {
 
 }
 
-
-let botao_logar = document.getElementById("btn_logar");
-botao_logar.addEventListener("click",login);
+if (ATIVADO){
+    let botao_logar = document.getElementById("btn_logar");
+    botao_logar.addEventListener("click",login);
+}else{
+    document.getElementById("fora").style.display = "block";
+}
